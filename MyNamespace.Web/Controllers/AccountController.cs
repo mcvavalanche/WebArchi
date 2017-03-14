@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using MyNamespace.Web.Auth;
 using MyNamespace.Web.Models;
 
 namespace MyNamespace.Web.Controllers

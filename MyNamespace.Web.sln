@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNamespace.Model", "MyName
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MyNamespace.Database", "MyNamespace.Database\MyNamespace.Database.sqlproj", "{9917419F-18C3-4F4F-9BEA-5295A53BA9FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNamespace.Web.Auth", "MyNamespace.Auth\MyNamespace.Web.Auth.csproj", "{05944D45-DC9E-4C52-A7ED-56E868091EA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{9917419F-18C3-4F4F-9BEA-5295A53BA9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9917419F-18C3-4F4F-9BEA-5295A53BA9FF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9917419F-18C3-4F4F-9BEA-5295A53BA9FF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{05944D45-DC9E-4C52-A7ED-56E868091EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05944D45-DC9E-4C52-A7ED-56E868091EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05944D45-DC9E-4C52-A7ED-56E868091EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05944D45-DC9E-4C52-A7ED-56E868091EA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
