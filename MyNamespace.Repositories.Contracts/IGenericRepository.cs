@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyNamespace.Repositories.Contracts
 {
-    public class Class1
+    public interface IGenericRepository<T>
     {
+        T Get(object id);
+        IEnumerable<T> GetAll();
+        void Delete(T obj);
+        void Add(T obj);
     }
 }

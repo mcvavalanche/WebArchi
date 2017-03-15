@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="Impl\Ext.cs" />
     <Compile Include="Impl\GenericRepository.cs" />
+    <Compile Include="Impl\UnitOfWork.cs" />
+    <Compile Include="Impl\UserRepository.cs" />
     <Compile Include="MyNamespace.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,6 +93,10 @@
     <ProjectReference Include="..\MyNamespace.Model\MyNamespace.Model.csproj">
       <Project>{02897357-4d39-41fa-b43f-6be0e2d58c5b}</Project>
       <Name>MyNamespace.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyNamespace.Repositories.Contracts\MyNamespace.Repositories.Contracts.csproj">
+      <Project>{a6c26248-75a4-4aee-9b00-84ca97a85d6c}</Project>
+      <Name>MyNamespace.Repositories.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

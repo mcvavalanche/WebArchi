@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MyNamespace.Model;
+using MyNamespace.Repositories.Contracts;
 
 namespace MyNamespace.Repositories.EF.Impl
 {
-    class GenericRepository<T> where T:BaseModel
+    class GenericRepository<T>: IGenericRepository<T> where T:BaseModel
     {
         public GenericRepository(Entities dbContext)
         {
@@ -19,9 +20,14 @@ namespace MyNamespace.Repositories.EF.Impl
 
         protected Entities DbContext;
 
-        public T Get(int id)
+        public T Get(object id)
         {
             return DbContext.Set<T>().Find(id);
+        }
+
+        public IEnumerable<T> GetAll()
+        {
+            return DbContext.Set<T>().ToList();
         }
 
         public void Delete(T obj)
