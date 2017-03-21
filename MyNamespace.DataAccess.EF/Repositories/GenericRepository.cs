@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Core.Objects.DataClasses;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MyNamespace.Model;
-using MyNamespace.Repositories.Contracts;
+using MyNamespace.DataAccess.Contracts.Repositories;
+using MyNamespace.DataAccess.Model;
 
-namespace MyNamespace.Repositories.EF.Impl
+namespace MyNamespace.DataAccess.EF.Repositories
 {
     class GenericRepository<T>: IGenericRepository<T> where T:BaseModel
     {

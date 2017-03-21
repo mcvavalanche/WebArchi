@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyNamespace.Model
+namespace MyNamespace.DataAccess.Model
 {
     using System;
     using System.Collections.Generic;

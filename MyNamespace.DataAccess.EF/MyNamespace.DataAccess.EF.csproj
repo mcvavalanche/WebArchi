@@ -7,8 +7,8 @@
     <ProjectGuid>{22C4765C-6CDB-41FF-9830-ED0067A74AB0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyNamespace.Repositories.EF</RootNamespace>
-    <AssemblyName>MyNamespace.Repositories.EF</AssemblyName>
+    <RootNamespace>MyNamespace.DataAccess.EF</RootNamespace>
+    <AssemblyName>MyNamespace.DataAccess.EF</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -51,10 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Impl\Ext.cs" />
-    <Compile Include="Impl\GenericRepository.cs" />
-    <Compile Include="Impl\UnitOfWork.cs" />
-    <Compile Include="Impl\UserRepository.cs" />
+    <Compile Include="Ext.cs" />
+    <Compile Include="Infra\AutofacModule.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\RolesRepository.cs" />
+    <Compile Include="UnitsOfWork\AuthUnitOfWork.cs" />
+    <Compile Include="UnitsOfWork\BaseUnitOfWork.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="MyNamespace.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,17 +95,17 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\MyNamespace.Model\MyNamespace.Model.csproj">
-      <Project>{02897357-4d39-41fa-b43f-6be0e2d58c5b}</Project>
-      <Name>MyNamespace.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MyNamespace.Repositories.Contracts\MyNamespace.Repositories.Contracts.csproj">
+    <ProjectReference Include="..\MyNamespace.DataAccess.Contracts\MyNamespace.DataAccess.Contracts.csproj">
       <Project>{a6c26248-75a4-4aee-9b00-84ca97a85d6c}</Project>
-      <Name>MyNamespace.Repositories.Contracts</Name>
+      <Name>MyNamespace.DataAccess.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyNamespace.DataAccess.Model\MyNamespace.DataAccess.Model.csproj">
+      <Project>{02897357-4d39-41fa-b43f-6be0e2d58c5b}</Project>
+      <Name>MyNamespace.DataAccess.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

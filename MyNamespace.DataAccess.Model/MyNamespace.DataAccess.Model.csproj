@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A6C26248-75A4-4AEE-9B00-84CA97A85D6C}</ProjectGuid>
+    <ProjectGuid>{02897357-4D39-41FA-B43F-6BE0E2D58C5B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyNamespace.Repositories.Contracts</RootNamespace>
-    <AssemblyName>MyNamespace.Repositories.Contracts</AssemblyName>
+    <RootNamespace>MyNamespace.DataAccess.Model</RootNamespace>
+    <AssemblyName>MyNamespace.DataAccess.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,16 +40,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IGenericRepository.cs" />
-    <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="IUserRepository.cs" />
+    <Compile Include="AspNetRoles.cs">
+      <DependentUpon>MyNamespace.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaims.cs">
+      <DependentUpon>MyNamespace.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogins.cs">
+      <DependentUpon>MyNamespace.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUsers.cs">
+      <DependentUpon>MyNamespace.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="MyNamespace.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyNamespace.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyNamespace.Model\MyNamespace.Model.csproj">
-      <Project>{02897357-4d39-41fa-b43f-6be0e2d58c5b}</Project>
-      <Name>MyNamespace.Model</Name>
-    </ProjectReference>
+    <Content Include="MyNamespace.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyNamespace.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

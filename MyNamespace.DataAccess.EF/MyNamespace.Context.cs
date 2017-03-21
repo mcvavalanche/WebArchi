@@ -7,13 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using MyNamespace.Model;
-
-namespace MyNamespace.Repositories.EF
+namespace MyNamespace.DataAccess.EF
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using MyNamespace.DataAccess.Model;
     
     public partial class Entities : DbContext
     {

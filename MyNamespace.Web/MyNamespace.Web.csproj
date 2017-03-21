@@ -287,10 +287,6 @@
       <Project>{05944d45-dc9e-4c52-a7ed-56e868091ea5}</Project>
       <Name>MyNamespace.Web.Auth</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MyNamespace.Repositories.Contracts\MyNamespace.Repositories.Contracts.csproj">
-      <Project>{a6c26248-75a4-4aee-9b00-84ca97a85d6c}</Project>
-      <Name>MyNamespace.Repositories.Contracts</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
