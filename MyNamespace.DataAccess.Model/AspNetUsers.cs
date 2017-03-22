@@ -7,11 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Xml.Serialization;
+
 namespace MyNamespace.DataAccess.Model
 {
     using System;
     using System.Collections.Generic;
     
+
     public partial class AspNetUsers : BaseModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

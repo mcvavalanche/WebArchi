@@ -20,6 +20,12 @@ namespace MyNamespace.DataAccess.EF.UnitsOfWork
             RolesRepository = new RolesRepository(DbContext);
         }
 
+        public AuthUnitOfWork(Entities context,IUserRepository ur, IRolesRepository rr):base(context)
+        {
+            UserRepository = ur;
+            RolesRepository = rr;
+        }
+
         public IUserRepository UserRepository { get; }
         public IRolesRepository RolesRepository { get; }
     }

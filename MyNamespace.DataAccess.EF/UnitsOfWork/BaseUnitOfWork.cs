@@ -3,7 +3,7 @@ using MyNamespace.DataAccess.Contracts.UnitsOfWork;
 
 namespace MyNamespace.DataAccess.EF.UnitsOfWork
 {
-    public abstract class BaseUnitOfWork:IBaseUnitOfWork
+    public class BaseUnitOfWork:IBaseUnitOfWork
     {
         protected Entities DbContext { get; private set; }
 
@@ -20,6 +20,12 @@ namespace MyNamespace.DataAccess.EF.UnitsOfWork
         public void Save()
         {
             DbContext.SaveChanges();
+        }
+
+
+        public Task GetRepository<T>()
+        {
+            return null;
         }
     }
 }
