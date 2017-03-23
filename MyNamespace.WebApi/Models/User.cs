@@ -16,5 +16,8 @@ namespace MyNamespace.WebApi.Models
         public string Name { get; set; }
         //[DataMember]
         public string Email { get; set; }
+
+        public string Password { get; set; }
+
     }
 }

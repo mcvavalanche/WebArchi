@@ -5,10 +5,12 @@ using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Runtime.Serialization;
+using System.Web;
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using MyNamespace.DataAccess.Model;
+using MyNamespace.Web.Auth;
 using MyNamespace.WebApi.Models;
 
 namespace MyNamespace.WebApi
@@ -44,6 +46,10 @@ namespace MyNamespace.WebApi
             builder.RegisterAssemblyModules(Assembly.GetExecutingAssembly());
             builder.RegisterAssemblyModules(typeof(MyNamespace.DataAccess.EF.Infra.AutofacModule).Assembly);
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+
+
+
+
             var container = builder.Build();
 
             //GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);//this should also work
