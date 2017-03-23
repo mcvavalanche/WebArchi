@@ -14,11 +14,11 @@ namespace MyNamespace.DataAccess.EF.UnitsOfWork
     /// </summary>
     public class AuthUnitOfWork:BaseUnitOfWork, IAuthUnitOfWork
     {
-        public AuthUnitOfWork(Entities context):base(context)
-        {
-            UserRepository = new UserRepository(DbContext);
-            RolesRepository = new RolesRepository(DbContext);
-        }
+        //public AuthUnitOfWork(Entities context):base(context)
+        //{
+        //    UserRepository = new UserRepository(DbContext);
+        //    RolesRepository = new RolesRepository(DbContext);
+        //}
 
         public AuthUnitOfWork(Entities context,IUserRepository ur, IRolesRepository rr):base(context)
         {

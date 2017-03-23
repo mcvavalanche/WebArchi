@@ -20,7 +20,6 @@ namespace MyNamespace.WebApi
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -40,20 +39,6 @@ namespace MyNamespace.WebApi
 
             //handle text/html requests with the json formatter (return a json response). this will be the default when making a request from the browser without a specific Content-Type.
             //config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
-
-            //set up autofac
-            var builder = new ContainerBuilder();
-            builder.RegisterAssemblyModules(Assembly.GetExecutingAssembly());
-            builder.RegisterAssemblyModules(typeof(MyNamespace.DataAccess.EF.Infra.AutofacModule).Assembly);
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
-
-
-
-
-            var container = builder.Build();
-
-            //GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);//this should also work
-            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }
     }
 }

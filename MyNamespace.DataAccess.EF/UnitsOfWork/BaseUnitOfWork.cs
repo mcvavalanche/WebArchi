@@ -22,7 +22,6 @@ namespace MyNamespace.DataAccess.EF.UnitsOfWork
             DbContext.SaveChanges();
         }
 
-
         public Task GetRepository<T>()
         {
             return null;

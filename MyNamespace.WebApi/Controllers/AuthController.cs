@@ -8,6 +8,7 @@ using System.Web.Http;
 using System.Web.Http.Results;
 using Microsoft.AspNet.Identity.Owin;
 using MyNamespace.DataAccess.Contracts.Repositories;
+using MyNamespace.DataAccess.Contracts.UnitsOfWork;
 using MyNamespace.DataAccess.Model;
 using MyNamespace.Web.Auth.Interfaces;
 using MyNamespace.WebApi.Models;
@@ -16,21 +17,21 @@ namespace MyNamespace.WebApi.Controllers
 {
     public class AuthController : ApiController
     {
-        private readonly IUserRepository _repo;
+        private readonly IAuthUnitOfWork _repo;
         private readonly ISignInManager _singInManager;
 
-        public AuthController(IUserRepository repo, ISignInManager singInManager)
+        public AuthController(IAuthUnitOfWork repo, ISignInManager singInManager)
         {
             _repo = repo;
             _singInManager = singInManager;
         }
 
-        public AspNetUsers Get()
+        public AspNetRoles Get()
         {
-            var x = _repo.GetAll();
-            var u = x.FirstOrDefault();
-            return u;
-            //return new User {Name = u.UserName, Email = u.Email};
+            var r = new AspNetRoles() {Name = "HR"};
+            _repo.RolesRepository.Add(r);
+            _repo.Save();
+            return r;
         }
 
 

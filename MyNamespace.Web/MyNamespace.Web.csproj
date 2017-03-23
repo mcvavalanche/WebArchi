@@ -201,7 +201,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebModule.cs" />
+    <Compile Include="Infra\WebAutofacModule.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -286,6 +286,10 @@
     <ProjectReference Include="..\MyNamespace.Auth\MyNamespace.Web.Auth.csproj">
       <Project>{05944d45-dc9e-4c52-a7ed-56e868091ea5}</Project>
       <Name>MyNamespace.Web.Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyNamespace.DataAccess.EF\MyNamespace.DataAccess.EF.csproj">
+      <Project>{22c4765c-6cdb-41ff-9830-ed0067a74ab0}</Project>
+      <Name>MyNamespace.DataAccess.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

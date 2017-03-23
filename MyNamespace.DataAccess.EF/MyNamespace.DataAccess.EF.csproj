@@ -56,8 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntitiesPartial.cs" />
-    <Compile Include="Ext.cs" />
-    <Compile Include="Infra\AutofacModule.cs" />
+    <Compile Include="Infra\DataAccessAutofacModule.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\RolesRepository.cs" />
     <Compile Include="UnitsOfWork\AuthUnitOfWork.cs" />

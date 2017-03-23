@@ -9,11 +9,11 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace MyNamespace.WebApi.Infra
 {
-    public class AutofacModule:Module
+    public class WebApiAutofacModule:Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-            //base.Load(builder);
+            base.Load(builder);
             //builder.Register(c => HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>())
             //.OnActivated(e => (e.Instance).EmailService = e.Context.Resolve<IIdentityMessageService>())
             //.As<IUserManager>();
