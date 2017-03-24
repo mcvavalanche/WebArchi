@@ -9,6 +9,7 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
 using MyNamespace.DataAccess.EF.Infra;
+using MyNamespace.Web.Auth.Infra;
 using MyNamespace.Web.Infra;
 
 namespace MyNamespace.Web
@@ -35,9 +36,10 @@ namespace MyNamespace.Web
             builder.RegisterSource(new ViewRegistrationSource());
             
             // Register Modules
-            //builder.RegisterModule(new WebAutofacModule());
             builder.RegisterAssemblyModules(Assembly.GetExecutingAssembly());
             builder.RegisterModule(new DataAccessAutofacModule("name=Entities"));
+            builder.RegisterModule(new AuthAutofacModule());
+
 
             var container = builder.Build();
             

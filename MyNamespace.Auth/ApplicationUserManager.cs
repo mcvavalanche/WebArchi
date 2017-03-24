@@ -3,11 +3,12 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
+    using MyNamespace.Web.Auth.Interfaces;
 
 namespace MyNamespace.Web.Auth
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
-    public class ApplicationUserManager : UserManager<ApplicationUser>
+    public class ApplicationUserManager : UserManager<ApplicationUser>, IUserManager
     {
         public ApplicationUserManager(IUserStore<ApplicationUser> store)
             : base(store)

@@ -59,7 +59,8 @@
     <Compile Include="Infra\DataAccessAutofacModule.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\RolesRepository.cs" />
-    <Compile Include="UnitsOfWork\AuthUnitOfWork.cs" />
+    <Compile Include="Repositories\UserDetailsRepository.cs" />
+    <Compile Include="UnitsOfWork\UserUnitOfWork.cs" />
     <Compile Include="UnitsOfWork\BaseUnitOfWork.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="MyNamespace.Context.cs">

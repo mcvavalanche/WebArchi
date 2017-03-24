@@ -2,9 +2,11 @@
 
 namespace MyNamespace.DataAccess.Contracts.UnitsOfWork
 {
-    public interface IAuthUnitOfWork:IBaseUnitOfWork
+    public interface IUserUnitOfWork:IBaseUnitOfWork
     {
         IUserRepository UserRepository { get; }
         IRolesRepository RolesRepository { get; }
+        IUserDetailsRepository UserDetailsRepository { get; }
+
     }
 }

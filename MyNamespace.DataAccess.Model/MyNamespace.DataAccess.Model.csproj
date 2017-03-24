@@ -59,6 +59,9 @@
       <DependentUpon>MyNamespace.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDetails.cs">
+      <DependentUpon>MyNamespace.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyNamespace.tt">

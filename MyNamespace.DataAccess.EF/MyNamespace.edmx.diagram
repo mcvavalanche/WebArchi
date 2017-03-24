@@ -12,6 +12,8 @@
         <AssociationConnector Association="MyNamespace.Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="MyNamespace.Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="MyNamespace.Model.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MyNamespace.Model.UserDetails" Width="1.5" PointX="5.25" PointY="7.25" />
+        <AssociationConnector Association="MyNamespace.Model.FK_UserDetails_AspNetUsers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

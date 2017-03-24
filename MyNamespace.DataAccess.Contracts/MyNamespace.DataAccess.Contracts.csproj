@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitsOfWork\IAuthUnitOfWork.cs" />
+    <Compile Include="Repositories\IUserDetailsRepository.cs" />
+    <Compile Include="UnitsOfWork\IUserUnitOfWork.cs" />
     <Compile Include="Repositories\IGenericRepository.cs" />
     <Compile Include="UnitsOfWork\IBaseUnitOfWork.cs" />
     <Compile Include="Repositories\IRolesRepository.cs" />

@@ -8,5 +8,6 @@ namespace MyNamespace.DataAccess.EF.Repositories
         public RolesRepository(Entities dbContext) : base(dbContext)
         {
         }
+
     }
 }

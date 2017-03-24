@@ -8,6 +8,7 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.WebApi;
 using MyNamespace.DataAccess.EF.Infra;
+using MyNamespace.Web.Auth.Infra;
 
 namespace MyNamespace.WebApi
 {
@@ -27,6 +28,7 @@ namespace MyNamespace.WebApi
             //register Modules
             builder.RegisterAssemblyModules(Assembly.GetExecutingAssembly());
             builder.RegisterModule(new DataAccessAutofacModule("name=Entities"));
+            builder.RegisterModule(new AuthAutofacModule());
 
             var container = builder.Build();
 

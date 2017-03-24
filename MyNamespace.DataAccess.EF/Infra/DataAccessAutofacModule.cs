@@ -39,11 +39,13 @@ namespace MyNamespace.DataAccess.EF.Infra
             builder.Register(c =>
                     {
                         var ctx = c.Resolve<Entities>();
-                        return new AuthUnitOfWork(ctx,
-                            c.Resolve<IUserRepository>(new TypedParameter(typeof(Entities), ctx)),
-                            c.Resolve<IRolesRepository>(new TypedParameter(typeof(Entities), ctx)));
+                        var paramCtx = new TypedParameter(typeof(Entities), ctx);
+                        return new UserUnitOfWork(ctx,
+                            c.Resolve<IUserRepository>(paramCtx),
+                            c.Resolve<IUserDetailsRepository>(paramCtx),
+                            c.Resolve<IRolesRepository>(paramCtx));
                     }
-                ).As<IAuthUnitOfWork>();
+                ).As<IUserUnitOfWork>();
 
         }
     }
