@@ -7,6 +7,7 @@ namespace MyNamespace.DataAccess.Contracts.Repositories
         T Get(object id);
         IEnumerable<T> GetAll();
         void Delete(T obj);
-        void Add(T obj);
+        void AddOrUpdate(T obj);
+        //void Add(T obj);
     }
 }

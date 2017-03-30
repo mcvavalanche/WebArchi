@@ -11,10 +11,10 @@ namespace MyNamespace.DataAccess.EF.Repositories
         {
         }
 
-        public override bool IsNew(AspNetUsers obj)
-        {
-            return !DbContext.Set<AspNetUsers>().Any(u => u.Id == obj.Id);
-            //return string.IsNullOrEmpty(obj.Id);
-        }
+        //protected override bool IsNew(AspNetUsers obj)
+        //{
+        //    return !DbContext.Set<AspNetUsers>().Any(u => u.Id == obj.Id);
+        //    //return string.IsNullOrEmpty(obj.Id);
+        //}
     }
 }
