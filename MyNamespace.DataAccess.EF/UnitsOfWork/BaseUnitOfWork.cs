@@ -7,7 +7,7 @@ namespace MyNamespace.DataAccess.EF.UnitsOfWork
     {
         protected Entities DbContext { get; private set; }
 
-        protected BaseUnitOfWork(Entities context)
+        public BaseUnitOfWork(Entities context)
         {
             DbContext = context;
         }

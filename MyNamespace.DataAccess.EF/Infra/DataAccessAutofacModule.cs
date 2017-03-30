@@ -25,7 +25,7 @@ namespace MyNamespace.DataAccess.EF.Infra
             base.Load(builder);
 
             //builder.RegisterType<Entities>().AsSelf();
-            builder.Register(c => new Entities(_connectionString));
+            builder.Register(c => new Entities(_connectionString)).InstancePerLifetimeScope();
 
             //register repositories
             builder
@@ -35,17 +35,18 @@ namespace MyNamespace.DataAccess.EF.Infra
                 .PropertiesAutowired()
                 .InstancePerDependency();
 
-            //register UnitOfWork
-            builder.Register(c =>
-                    {
-                        var ctx = c.Resolve<Entities>();
-                        var paramCtx = new TypedParameter(typeof(Entities), ctx);
-                        return new UserUnitOfWork(ctx,
-                            c.Resolve<IUserRepository>(paramCtx),
-                            c.Resolve<IUserDetailsRepository>(paramCtx),
-                            c.Resolve<IRolesRepository>(paramCtx));
-                    }
-                ).As<IUserUnitOfWork>();
+            builder.RegisterType<BaseUnitOfWork>().As<IBaseUnitOfWork>();
+
+            //builder.Register(c =>
+            //        {
+            //            var ctx = c.Resolve<Entities>();
+            //            var paramCtx = new TypedParameter(typeof(Entities), ctx);
+            //            return new UserUnitOfWork(ctx,
+            //                c.Resolve<IUserRepository>(paramCtx),
+            //                c.Resolve<IUserDetailsRepository>(paramCtx),
+            //                c.Resolve<IRolesRepository>(paramCtx));
+            //        }
+            //    ).As<IUserUnitOfWork>();
 
         }
     }

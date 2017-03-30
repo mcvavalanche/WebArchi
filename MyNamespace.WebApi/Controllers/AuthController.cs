@@ -19,32 +19,42 @@ namespace MyNamespace.WebApi.Controllers
 {
     public class AuthController : ApiController
     {
-        private readonly IUserUnitOfWork _userUnitOfWork;
+        private readonly AppContext _appContext;
+        private readonly IBaseUnitOfWork _unitOfWork;
+        private readonly IUserRepository _userRepository;
+        private readonly IUserDetailsRepository _userDetailsRepository;
         private readonly ISignInManager _singInManager;
         private readonly IUserManager _userManager;
 
-        public AuthController(IUserUnitOfWork userUnitOfWork, ISignInManager singInManager, IUserManager userManager)
+        public AuthController(AppContext appContext, IBaseUnitOfWork unitOfWork, IUserRepository userRepository, IUserDetailsRepository userDetailsRepository, ISignInManager singInManager, IUserManager userManager)
         {
-            _userUnitOfWork = userUnitOfWork;
+            _appContext = appContext;
+            _unitOfWork = unitOfWork;
+            _userRepository = userRepository;
+            _userDetailsRepository = userDetailsRepository;
             _singInManager = singInManager;
             _userManager = userManager;
+
         }
 
         public bool Get()
         {
+            //resolve
+            var test = _appContext.Resolve<IUserRepository>();
+
             //var r = new AspNetRoles() {Name = "HR"};
             //_userUnitOfWork.RolesRepository.Add(r);
-            var usr=_userUnitOfWork.UserRepository.GetAll().First();
+            var usr=_userRepository.GetAll().First();
             var ud = new UserDetails()
             {
                 Id = 2,
-                FirstName = "Bugs2",
-                LastName = "Bunny2",
-                Address = "rabbit hole no.2",
-                //UserId = usr.Id
+                FirstName = "Bugs34",
+                LastName = "Bunny34",
+                Address = "rabbit hole no.34",
+                UserId = usr.Id
             };
-            _userUnitOfWork.UserDetailsRepository.Add(ud);
-            _userUnitOfWork.Save();
+            _userDetailsRepository.AddOrUpdate(ud);
+            _unitOfWork.Save();
             return true;
         }
 

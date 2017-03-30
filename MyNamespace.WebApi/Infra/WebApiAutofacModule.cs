@@ -14,6 +14,7 @@ namespace MyNamespace.WebApi.Infra
         protected override void Load(ContainerBuilder builder)
         {
             base.Load(builder);
+            builder.RegisterType<AppContext>().SingleInstance();
         }
     }
 }
